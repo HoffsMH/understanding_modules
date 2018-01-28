@@ -3,15 +3,6 @@ defmodule UnderstandingModules do
   Documentation for UnderstandingModules.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> UnderstandingModules.goodbye
-      :ok
-
-  """
-
   use UseMe
+  import ImportMe
 end

@@ -1,14 +1,14 @@
 defmodule UseMe do
-
-  def goodbye do
-    IO.puts "ok"
-    :ok
+  def function_from_use do
+    :use
   end
 
   defmacro __using__(_) do
     quote do
-      def goodbye do
-        UseMe.goodbye
+      # lets see if I get rid of
+      # this
+      def function_from_use do
+        UseMe.function_from_use
       end
     end
   end
