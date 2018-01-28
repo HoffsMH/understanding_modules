@@ -15,6 +15,15 @@ defmodule UnderstandingModules do
 
       iex> UnderstandingModules.alias_wrapper_two
       :function_from_alias
+
+      iex> UnderstandingModules.alias_wrapper_three
+      :function_from_alias
+  """
+
+  # this wont execute
+  @taco """
+      iex> UnderstandingModules.alias_wrapper_two
+      :function_from_alias
   """
 
   # this basically does nothing
@@ -46,5 +55,11 @@ defmodule UnderstandingModules do
 
   def alias_wrapper_two do
     SomethingElse.function_from_alias
+  end
+
+  # lexical scoping example
+  def alias_wrapper_three do
+    alias SomeNamespace.AliasMeTo, as: Ok
+    Ok.function_from_alias
   end
 end
